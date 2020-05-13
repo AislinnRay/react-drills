@@ -1,26 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+  constructor (){
+    super();
+
+    this.state= {
+      text: ['Hi', 'How', "are", "you","?"]
+
+    }
+  }
+
+  handleChange(value) {
+    this.setState({text: value});
+  }
+
+  render () {
+    const texts = this.state.text.map((element,index) => {
+      return<h2 key={index}> {element} </h2>
+    })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {texts}
+      {/* <p> {texts} </p> */}
+      {/* <h2> Hi </h2>
+      <h2> How </h2>
+      <h2> are </h2>
+      <h2> you </h2>
+      <h2> ? </h2> */}
     </div>
   );
+}
 }
 
 export default App;
