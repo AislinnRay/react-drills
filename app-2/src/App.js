@@ -12,10 +12,6 @@ class App extends Component {
     }
   }
 
-  handleChange(value) {
-    this.setState({text: value});
-  }
-
   render () {
     const texts = this.state.text.map((element,index) => {
       return<h2 key={index}> {element} </h2>
