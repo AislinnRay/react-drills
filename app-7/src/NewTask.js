@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
-class NewTask extends Component {
+
+export default class NewTask extends Component {
     constructor() {
         super();
 
@@ -22,9 +23,9 @@ class NewTask extends Component {
     render(){
         return (
             <div>
-                <input value={this.state.input} placeholder="Enter new task" onChange={e => this.handleInput}
-
+                <input value={this.state.input} placeholder="Enter new task" onChange={e => this.handleInputChange(e.target.value)}/>
+                <button onCLick={this.handleAdd}>Add</button>
             </div>
-        )
+        );
     }
 }
