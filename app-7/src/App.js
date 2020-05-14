@@ -20,7 +20,7 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      <h1>My tp-do list:</h1>
+      <h1>My to-do list:</h1>
       <NewTask add={this.handleAddTask}/>
       <List tasks={this.state.list} />
     </div>
